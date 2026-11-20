@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Leonida Legend</h1>
+      <p class="sub">GTA VI trophy guide &amp; tracker — offline, on your machine</p>
+    </div>
+  </div>
+  <div class="progress" id="progress">
+    <div class="progress-text"><strong id="earned-count">0 of 55 earned</strong> <span id="earned-pct">0% to Platinum</span></div>
+    <div class="bar" role="progressbar" aria-label="Progress to Platinum"><div class="bar-fill" id="bar-fill" style="width:0%"></div></div>
+    <div class="stats" id="stats-line">Gold 0 of 2 · Silver 0 of 6 · Missables left 8</div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <a href="#/" id="tab-tracker" class="tab active">Tracker</a>
+  <a href="#roadmap" id="tab-roadmap" class="tab">Roadmap to Platinum</a>
+  <a href="#watch" id="tab-watch" class="tab">Watch-outs <span class="pill" id="watch-count">8 missable</span></a>
+</nav>
+
+<div class="controls" id="controls">
+  <label class="search">Search <input id="q" type="search" placeholder="Trophy name or keyword…" autocomplete="off"></label>
+  <label>Tier
+    <select id="tier">
+      <option value="all">All tiers</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="side">Side</option>
+      <option value="collectible">Collectible</option>
+      <option value="combat">Combat</option>
+      <option value="driving">Driving</option>
+      <option value="activity">Activity</option>
+      <option value="platinum">Platinum</option>
+    </select>
+  </label>
+  <label class="check"><input id="hide-earned" type="checkbox"> Hide earned</label>
+  <label class="check"><input id="spoilers" type="checkbox"> Spoilers off</label>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+</div>
+
+<main>
+  <section id="tracker-view" class="view">
+    <div class="tracker-grid">
+      <div class="list-col">
+        <p class="hint" id="list-hint">55 trophies · tick one off and it stays ticked · click a row to open its guide</p>
+        <ul id="rows" class="rows"></ul>
+        <p class="empty" id="empty" hidden>No trophies match these filters.</p>
+      </div>
+      <aside class="detail" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="roadmap-view" class="view" hidden>
+    <h2>Roadmap to the Platinum</h2>
+    <p class="lede">A recommended order, built only from the official trophy descriptions. It is a recommendation, not a rule — the story trophies unlock on their own whatever order you play in.</p>
+    <ol class="steps">
+      <li><strong>Play the story, and take the one-time moments as they come.</strong> Chapters 1–4 and the final mission unlock on their own. While the story runs, do the missable trophies the moment their window opens: the partner trophies (Hot Together, Retail Therapy), the VCIA departure, the Ocean Beach cocktail, the showroom smash, and the stranger strands (8 full strands for Strangers &amp; Freaks). Missables are flagged in the tracker and listed under Watch-outs — check that page before every story chapter.</li>
+      <li><strong>Finish every character strand.</strong> Andy, Kenton, Billy, Randy and Tyrone each have a final mission trophy; Bret has the unique-animal hunt. Take their missions as the icons appear and close each strand before the finale.</li>
+      <li><strong>Try every activity once.</strong> One visit each to fishing, the shooting range, drone racing, races, arcade games, bowling, meditation, hunting and the WAiNK photo spots earns Master of None and opens the activity trophies (The Shootist's 42 gold medals, Top Fun's 14 drone races, the fishing challenge against Cal).</li>
+      <li><strong>Sweep the collectibles in one road trip.</strong> Meditation spots (18), WAiNK photo locations (100), collectible card sets (3), the 52 areas of Leonida, 100 vehicles discovered and 8 garages bought. One sweep per region, checking the collection menu as you go, beats criss-crossing the map.</li>
+      <li><strong>Grind the counted trophies.</strong> 250 stunts, 20 different race wins, 50 challenges, 5 bank vaults, one illegal operation per gang (9), $250,000 laundered, $100,000 spent, 10 vehicles registered, 500 choices made. These climb steadily while you play; finish the leftovers in cleanup with the stats menu open.</li>
+      <li><strong>Close out 100% completion.</strong> A Long Road (gold) and the Platinum land together once every strand, collectible and counted challenge is done. Use the in-game completion stats as the final checklist.</li>
+    </ol>
+    <p class="note">Estimated shape of the grind: the story and its missables are the first pass; the collectible sweep and the counted trophies are the long second pass. Nothing in the list needs a second playthrough if the missables are caught in time.</p>
+  </section>
+
+  <section id="watch-view" class="view" hidden>
+    <h2>Watch-outs — the missable trophies</h2>
+    <p class="lede">Eight trophies are tied to moments that may not come back. Do them while their window is open; everything else can be cleaned up after the story.</p>
+    <ul id="missable-list" class="missable-list"></ul>
+    <h3>Before you finish the story</h3>
+    <ul class="checklist">
+      <li>Partner trophies done? Hot Together and Retail Therapy both need a partner beside you.</li>
+      <li>Stranger strands: 8 finished, not just started?</li>
+      <li>Bret's unique-animal hunt finished?</li>
+      <li>VCIA departure, Ocean Beach cocktail and showroom smash all popped?</li>
+      <li>Character strands closed: Andy, Kenton, Billy, Randy, Tyrone?</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Legend runs entirely offline from its own files — no accounts, no uploads, no tracking. Trophy names and descriptions are shown as PlayStation publishes them; every guide is written for this entry and cites its sources by name. Not affiliated with Rockstar Games or PlayStation. Sources consulted: PowerPyx trophy guide · PlayStationTrophies.org · PSNProfiles · Exophase.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
